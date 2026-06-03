@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bluetooth Body Scale - healthume Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="bg-light py-2 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-none d-md-block small">
+                <span class="me-3">
+                    <i class="fas fa-check-circle text-success"></i> Medically Reviewed
+                </span>
+                <span class="me-3">
+                    <i class="fas fa-user-md text-primary"></i> Expert Verified
+                </span>
+                <span>
+                    <i class="fas fa-calendar-check text-info"></i> Last Updated: June 03, 2026
+                </span>
+            </div>
+            <div class="text-end small">
+                <a href="../privacy-policy.html" class="text-decoration-none text-muted">Privacy Policy</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">healthume</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                            href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
+                            href="../blog/index.html">Articles</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogCategoryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="blogCategoryDropdown">
+                            <li><a class="dropdown-item" href="../blog/category-mental-health.html">Mental Health</a></li>
+<li><a class="dropdown-item" href="../blog/category-nutrition-diet.html">Nutrition & Diet</a></li>
+<li><a class="dropdown-item" href="../blog/category-physical-health.html">Physical Health</a></li>
+<li><a class="dropdown-item" href="../blog/category-skin-beauty.html">Skin & Beauty</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
+                            href="../shop/index.html">Products</a>
+                    </li>
+
+
+
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="../tools/bmi_calculator.html">BMI Calculator</a></li>
+                            <li><a class="dropdown-item" href="../tools/calorie_calculator.html">Daily Calorie
+                                    Calculator</a></li>
+                        </ul>
+
+                    </li>
+
+
+
+
+
+
+                </ul>
+                <form class="d-flex" action="../search.html" method="GET">
+                    <input class="form-control me-2" type="search" name="q"
+                        placeholder="Search articles and products..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ✅ COVID-19 Update Banner -->
+    <div id="health-alert" class="alert alert-warning alert-dismissible fade show rounded-0 mb-0 text-center"
+        role="alert">
+        <strong>Health Products:</strong> Find the latest information and updates on our health products.
+        <a href="../shop/index.html" class="alert-link">Browse now</a>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- ✅ Main Content -->
+    <div class="container mt-4">
+        
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+
+        <div class="card mb-4 shadow-sm">
+            <div class="row g-0 align-items-center mb-3">
+                <div class="col-md-5">
+
+                    <img src="../media/product_images/health_weighing_device.jpg" class="img-fluid rounded-start" alt="Smart Bluetooth Body Scale" style="height: 300px; width: auto; max-width: 90%; margin: 0 auto; display: block;">
+                </div>
+
+                <div class="col-md-7">
+                    <div class="card-body p-3">
+                        <h1 class="card-title">Smart Bluetooth Body Scale</h1>
+                        <p class="text-muted mb-2">
+                            Category:
+                            <a href="category-fitness-equipment.html" class="text-decoration-none text-primary">Fitness Equipment</a>
+                        </p>
+
+                        <h2 class="text-success mb-3">Check In Buy Link</h2>
+
+                        <a href="https://amzn.to/4l3cCmB" class="btn btn-success btn-lg" target="_blank">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            {# Full width description below both columns #}
+            <div class="card-body pt-0">
+                <hr>
+                <div class="card-text" style="overflow-wrap: break-word;">
+                    <h2>Etekcity Smart Bluetooth Body Scale: Your Personal Health GPS</h2>
+
+<p><strong>Tired of guesswork? Ready for real results?</strong> The Etekcity Smart Bluetooth Body Scale isn't just a weighing scale – it's your personal health command center, trusted by over <strong>5 million users worldwide!</strong> Imagine unlocking a complete picture of your body, moving beyond just weight to truly understand your health journey.</p>
+
+<p>This isn't your average bathroom scale. Engineered for <strong>unrivaled precision</strong>, the Etekcity Smart Scale delivers ultra-detailed insights into your body composition, empowering you whether you're focused on <strong>shedding pounds, sculpting muscle, reducing fat, or simply building a healthier lifestyle.</strong></p>
+
+<h3>Connect, Track, Transform: Your Health, Seamlessly Integrated</h3>
+
+<p>Step on, and let the magic happen. Our advanced smart weighing scale connects effortlessly via <strong>Bluetooth</strong>, syncing instantly with your favorite health apps: <strong>Apple Health, Fitbit, Google Fit, Samsung Health, and more!</strong> Get crystal-clear, accurate body analysis with every single weigh-in.</p>
+
+<ul>
+    <li>✨ <strong>Know Your Body Inside Out:</strong> Beyond weight, track <strong>13 essential body metrics!</strong> See your BMI, body fat, visceral fat, water %, skeletal muscle, bone mass, metabolic age, and more.</li>
+    <li>📱 <strong>Smart App, Smarter You:</strong> Seamlessly integrates with the intuitive VeSync app, Apple Health, Fitbit, Google Fit, and Apple Watch. All your data, always at your fingertips.</li>
+    <li>👨‍👩‍👧‍👦 <strong>Health for the Whole Family:</strong> Unlimited user profiles! Track everyone's progress with ease. Plus, specialized modes for unique needs: Baby Mode, Light Object Mode (for parcels 100g+!), and Zero-Current Mode for safety.</li>
+    <li>🗣️ <strong>Hands-Free Health:</strong> Our Bluetooth weighing scale is <strong>Alexa compatible!</strong> Get progress updates or track trends with simple voice commands.</li>
+    <li>🎯 <strong>Pinpoint Accuracy:</strong> Don't settle for less. Our ultra-precise sensors measure to an astonishing 0.05 lb (0.02 kg), ensuring you get the most reliable readings from your digital weighing scale.</li>
+    <li>💡 <strong>Brilliant & Easy-to-Read:</strong> A premium LED display with large, clear numbers makes checking your progress effortless for all ages.</li>
+    <li>✅ <strong>HSA/FSA Approved:</strong> Invest in your health with confidence – this smart weighing scale is eligible for health savings account purchases.</li>
+</ul>
+
+<p>With its modern, <strong>sleek design and compact footprint</strong>, the Etekcity smart body weighing scale is a stylish addition to any bathroom. Its robust <strong>tempered glass platform</strong> supports up to 400 lbs (180 kg). This is more than just a scale; it's the intelligent tool designed to empower your journey to smarter, real-time health decisions.</p>
+
+<h3>Your Fitness Journey, Supercharged.</h3>
+<p>Whether you're pushing for new fitness milestones, maintaining a healthy weight, or simply seeking daily accountability, this smart weighing scale provides the precise, motivating data you need. Download the **FREE VeSync app** to visualize trends, set personalized goals, and revisit your historical data anytime, anywhere. Take control of your health story today!</p>
+
+<p style="display:none;">
+    The Etekcity smart Bluetooth weighing scale is the ultimate choice for users searching for the best smart bathroom scale with body fat analysis, BMI tracking, muscle mass measurement, and mobile app sync. Designed for athletes, families, and fitness enthusiasts in 2025, it's perfect for health tracking, precise digital weight measurement, and comprehensive wellness monitoring. For a top-rated weighing scale experience, choose Etekcity.
+</p>
+
+<p><strong>Tags:</strong> Smart Body Weighing Scale, Bluetooth Fat Analyzer, Digital BMI Weighing Scale, Health Monitoring Weighing Scale, Smart Bathroom Scale 2025, Fitness Weighing Scale for Home, Etekcity Digital Scale, Top Smart Scales, Weight Tracking Device, Accurate Weighing Scale, Best Weighing Scale</p>
+                </div>
+            </div>
+
+            <div class="card-body pt-3">
+                <a href="index.html" class="btn btn-secondary">Back to Shop</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <hr class="text-white-50">
+            <div class="text-center small">
+                <p>&copy; 2026 healthume. All rights reserved.</p>
+
+                <p>
+                    <a href="../privacy-policy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
+                    <span class="text-white-50">|</span>
+                    <a href="../terms-of-service.html" class="text-white text-decoration-none mx-2">Terms of
+                        Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const alertBar = document.getElementById("health-alert");
+            if (!alertBar) return;
+
+            if (sessionStorage.getItem("healthAlertDismissed") === "true") {
+                alertBar.style.display = "none";
+            }
+
+            alertBar.querySelector(".btn-close").addEventListener("click", function () {
+                sessionStorage.setItem("healthAlertDismissed", "true");
+            });
+        });
+    </script>
+
+
+
+    <!-- TinyMCE JavaScript -->
+    <script type="text/javascript" src=""></script>
+
+
+
+
+    <script>
+    function mockNewsletterSubscribe(form) {
+        const emailInput = form.querySelector('input[type="email"]');
+        if (emailInput && emailInput.value) {
+            alert('Subscription activated! You will start receiving health tips soon.');
+            emailInput.value = '';
+        }
+    }
+    </script>
+    
+</body>
+
+</html>

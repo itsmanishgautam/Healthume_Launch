@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - healthume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="bg-light py-2 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-none d-md-block small">
+                <span class="me-3">
+                    <i class="fas fa-check-circle text-success"></i> Medically Reviewed
+                </span>
+                <span class="me-3">
+                    <i class="fas fa-user-md text-primary"></i> Expert Verified
+                </span>
+                <span>
+                    <i class="fas fa-calendar-check text-info"></i> Last Updated: June 03, 2026
+                </span>
+            </div>
+            <div class="text-end small">
+                <a href="../privacy-policy.html" class="text-decoration-none text-muted">Privacy Policy</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">healthume</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                            href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
+                            href="../blog/index.html">Articles</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogCategoryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="blogCategoryDropdown">
+                            <li><a class="dropdown-item" href="../blog/category-mental-health.html">Mental Health</a></li>
+<li><a class="dropdown-item" href="../blog/category-nutrition-diet.html">Nutrition & Diet</a></li>
+<li><a class="dropdown-item" href="../blog/category-physical-health.html">Physical Health</a></li>
+<li><a class="dropdown-item" href="../blog/category-skin-beauty.html">Skin & Beauty</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
+                            href="../shop/index.html">Products</a>
+                    </li>
+
+
+
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+                            <li><a class="dropdown-item" href="../tools/bmi_calculator.html">BMI Calculator</a></li>
+                            <li><a class="dropdown-item" href="../tools/calorie_calculator.html">Daily Calorie
+                                    Calculator</a></li>
+                        </ul>
+
+                    </li>
+
+
+
+
+
+
+                </ul>
+                <form class="d-flex" action="../search.html" method="GET">
+                    <input class="form-control me-2" type="search" name="q"
+                        placeholder="Search articles and products..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ✅ COVID-19 Update Banner -->
+    <div id="health-alert" class="alert alert-warning alert-dismissible fade show rounded-0 mb-0 text-center"
+        role="alert">
+        <strong>Health Products:</strong> Find the latest information and updates on our health products.
+        <a href="../shop/index.html" class="alert-link">Browse now</a>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- ✅ Main Content -->
+    <div class="container mt-4">
+        
+<div class="container">
+    <h2 class="text-center mb-4">BMI Calculator - Calculate Your Body Mass Index</h2>
+    <p class="text-center mb-4">Use our BMI calculator to easily calculate your Body Mass Index. This tool helps you understand your body composition and health status, guiding you toward a healthier lifestyle.</p>
+
+    <!-- BMI Calculator Form -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <form id="bmi-form" onsubmit="calculateBMI(event)">
+                
+
+                <!-- Weight Input -->
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight</label>
+                    <div class="input-group">
+                        <input type="number" step="any" name="weight" id="weight" class="form-control" required
+                            placeholder="Enter weight">
+                        <select class="form-select" name="weight_unit" required>
+                            <option value="kg" selected>Kg</option>
+                            <option value="lbs">Pounds</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Height Input -->
+                <div class="mb-3">
+                    <label for="height" class="form-label">Height</label>
+                    <div class="input-group">
+                        <input type="number" step="any" name="height" id="height" class="form-control" required
+                            placeholder="Enter height">
+                        <select class="form-select" name="height_unit" required>
+                            <option value="ft" selected>Feet</option>
+                            <option value="cm">Centimeters</option>
+                            <option value="m">Meters</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Calculate Button -->
+                <button type="submit" class="btn btn-primary w-100">Calculate BMI</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- BMI Result in Columns -->
+    
+<div id="bmi-result" style="display: none;">
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Weight:</strong><br>
+                <span id="res-weight"></span>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Height:</strong><br>
+                <span id="res-height"></span>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Your BMI:</strong><br>
+                <span id="res-bmi"></span>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Category:</strong><br>
+                <span id="res-category"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Error or Invalid Input -->
+    
+
+    <p class="text-center mt-4">BMI, or Body Mass Index, is a simple method used to assess if you're in a healthy weight range for your height. Enter your weight and height in the calculator above to get an instant result.</p>
+</div>
+
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+        <div class="container">
+            <hr class="text-white-50">
+            <div class="text-center small">
+                <p>&copy; 2026 healthume. All rights reserved.</p>
+
+                <p>
+                    <a href="../privacy-policy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
+                    <span class="text-white-50">|</span>
+                    <a href="../terms-of-service.html" class="text-white text-decoration-none mx-2">Terms of
+                        Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+function calculateBMI(event) {
+    event.preventDefault();
+    const weight = parseFloat(document.getElementById('weight').value);
+    const weightUnit = document.getElementsByName('weight_unit')[0].value;
+    const height = parseFloat(document.getElementById('height').value);
+    const heightUnit = document.getElementsByName('height_unit')[0].value;
+
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        alert("Please enter valid weight and height values.");
+        return;
+    }
+
+    // Convert weight to kilograms
+    let weightKg = weight;
+    if (weightUnit === 'lbs') {
+        weightKg = weight * 0.453592;
+    }
+
+    // Convert height to meters
+    let heightM = height;
+    if (heightUnit === 'cm') {
+        heightM = height / 100;
+    } else if (heightUnit === 'ft') {
+        heightM = height * 0.3048;
+    }
+
+    const bmi = weightKg / (heightM * heightM);
+    const roundedBmi = bmi.toFixed(2);
+
+    // Determine BMI category
+    let category = "";
+    if (bmi < 18.5) {
+        category = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        category = "Normal weight";
+    } else if (bmi >= 24.9 && bmi < 29.9) {
+        category = "Overweight";
+    } else {
+        category = "Obese";
+    }
+
+    // Display results
+    document.getElementById('res-weight').innerText = weight + " " + weightUnit;
+    document.getElementById('res-height').innerText = height + " " + heightUnit;
+    document.getElementById('res-bmi').innerText = roundedBmi;
+    document.getElementById('res-category').innerText = category;
+    document.getElementById('bmi-result').style.display = 'block';
+}
+</script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const alertBar = document.getElementById("health-alert");
+            if (!alertBar) return;
+
+            if (sessionStorage.getItem("healthAlertDismissed") === "true") {
+                alertBar.style.display = "none";
+            }
+
+            alertBar.querySelector(".btn-close").addEventListener("click", function () {
+                sessionStorage.setItem("healthAlertDismissed", "true");
+            });
+        });
+    </script>
+
+
+
+    <!-- TinyMCE JavaScript -->
+    <script type="text/javascript" src=""></script>
+
+
+
+
+    <script>
+    function mockNewsletterSubscribe(form) {
+        const emailInput = form.querySelector('input[type="email"]');
+        if (emailInput && emailInput.value) {
+            alert('Subscription activated! You will start receiving health tips soon.');
+            emailInput.value = '';
+        }
+    }
+    </script>
+    
+</body>
+
+</html>
