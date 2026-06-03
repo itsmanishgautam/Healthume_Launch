@@ -9,7 +9,7 @@
     <title>Page Not Found (404)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -28,14 +28,14 @@
                 </span>
             </div>
             <div class="text-end small">
-                <a href="privacy-policy.html" class="text-decoration-none text-muted">Privacy Policy</a>
+                <a href="/privacy-policy.html" class="text-decoration-none text-muted">Privacy Policy</a>
             </div>
         </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">healthume</a>
+            <a class="navbar-brand" href="/index.html">healthume</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,12 +43,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
-                            href="index.html">Home</a>
+                        <a class="nav-link "
+                            href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
-                            href="blog/index.html">Articles</a>
+                        <a class="nav-link "
+                            href="/blog/index.html">Articles</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="blogCategoryDropdown" role="button"
@@ -56,15 +56,15 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="blogCategoryDropdown">
-                            <li><a class="dropdown-item" href="blog/category-mental-health.html">Mental Health</a></li>
-<li><a class="dropdown-item" href="blog/category-nutrition-diet.html">Nutrition & Diet</a></li>
-<li><a class="dropdown-item" href="blog/category-physical-health.html">Physical Health</a></li>
-<li><a class="dropdown-item" href="blog/category-skin-beauty.html">Skin & Beauty</a></li>
+                            <li><a class="dropdown-item" href="/blog/category-mental-health.html">Mental Health</a></li>
+<li><a class="dropdown-item" href="/blog/category-nutrition-diet.html">Nutrition & Diet</a></li>
+<li><a class="dropdown-item" href="/blog/category-physical-health.html">Physical Health</a></li>
+<li><a class="dropdown-item" href="/blog/category-skin-beauty.html">Skin & Beauty</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
-                            href="shop/index.html">Products</a>
+                        <a class="nav-link "
+                            href="/shop/index.html">Products</a>
                     </li>
 
 
@@ -78,8 +78,8 @@
                             Tools
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
-                            <li><a class="dropdown-item" href="tools/bmi_calculator.html">BMI Calculator</a></li>
-                            <li><a class="dropdown-item" href="tools/calorie_calculator.html">Daily Calorie
+                            <li><a class="dropdown-item" href="/tools/bmi_calculator.html">BMI Calculator</a></li>
+                            <li><a class="dropdown-item" href="/tools/calorie_calculator.html">Daily Calorie
                                     Calculator</a></li>
                         </ul>
 
@@ -91,7 +91,7 @@
 
 
                 </ul>
-                <form class="d-flex" action="search.html" method="GET">
+                <form class="d-flex" action="/search.html" method="GET">
                     <input class="form-control me-2" type="search" name="q"
                         placeholder="Search articles and products..." aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
@@ -105,7 +105,7 @@
     <div id="health-alert" class="alert alert-warning alert-dismissible fade show rounded-0 mb-0 text-center"
         role="alert">
         <strong>Health Products:</strong> Find the latest information and updates on our health products.
-        <a href="shop/index.html" class="alert-link">Browse now</a>.
+        <a href="/shop/index.html" class="alert-link">Browse now</a>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
@@ -116,7 +116,7 @@
     <h2 class="text-center mb-4">Oops! Page Not Found</h2>
     <p class="text-center">The page you are looking for might have been removed or is temporarily unavailable.</p>
     <div class="text-center">
-        <a href="{% url 'home' %}" class="btn btn-primary">Go to Home</a>
+        <a href="/index.html" class="btn btn-primary">Go to Home</a>
     </div>
 </div>
 
@@ -130,9 +130,9 @@
                 <p>&copy; 2026 healthume. All rights reserved.</p>
 
                 <p>
-                    <a href="privacy-policy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
+                    <a href="/privacy-policy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
                     <span class="text-white-50">|</span>
-                    <a href="terms-of-service.html" class="text-white text-decoration-none mx-2">Terms of
+                    <a href="/terms-of-service.html" class="text-white text-decoration-none mx-2">Terms of
                         Service</a>
                 </p>
             </div>
@@ -173,6 +173,21 @@
             emailInput.value = '';
         }
     }
+    </script>
+    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) {
+                        console.log('Service Worker registered successfully with scope: ', reg.scope);
+                    })
+                    .catch(function(err) {
+                        console.error('Service Worker registration failed: ', err);
+                    });
+            });
+        }
     </script>
     
 </body>

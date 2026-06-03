@@ -43,11 +43,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                        <a class="nav-link "
                             href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link "
                             href="../blog/index.html">Articles</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link active"
                             href="../shop/index.html">Products</a>
                     </li>
 
@@ -126,61 +126,61 @@
 <div class="row"></div>
 
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description|striptags|truncatewords:15 }}</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
 
-                    {# ✅ Price shown as-is to allow text like "Free", "Contact for price", "Rs. 500" #}
-                    {% if product.price %}
-                        <p class="card-text"><strong>{{ product.price }}</strong></p>
-                    {% else %}
+                    
+                    
+                        <p class="card-text"><strong></strong></p>
+                    
                         <p class="card-text text-muted"><small>Price not specified</small></p>
-                    {% endif %}
+                    
 
                     <div class="mt-auto">
-                        <a href="{% url 'shop:product_detail' product.slug %}" class="btn btn-info btn-sm">View Details</a>
+                        <a href="" class="btn btn-info btn-sm">View Details</a>
 
-                        {% if product.buy_link %}
-                            <a href="{{ product.buy_link }}" class="btn btn-success btn-sm ms-2" target="_blank">Buy Now</a>
-                        {% endif %}
+                        
+                            <a href="" class="btn btn-success btn-sm ms-2" target="_blank">Buy Now</a>
+                        
 
-                        {% if product.category %}
-                            <a href="{% url 'shop:product_by_category' product.category.slug %}" class="btn btn-secondary btn-sm mt-2 mt-md-0">{{ product.category.name }}</a>
-                        {% endif %}
+                        
+                            <a href="" class="btn btn-secondary btn-sm mt-2 mt-md-0"></a>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
+        
     </div>
 
-    {% if products.has_other_pages %}
+    
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
-            {% if products.has_previous %}
+            
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ products.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">Previous</a>
+                    <a class="page-link" href="?page=&q=">Previous</a>
                 </li>
-            {% endif %}
+            
 
-            {% for i in products.paginator.page_range %}
-                {% if products.number == i %}
-                    <li class="page-item active"><span class="page-link">{{ i }}</span></li>
-                {% else %}
-                    <li class="page-item"><a class="page-link" href="?page={{ i }}{% if query %}&q={{ query }}{% endif %}">{{ i }}</a></li>
-                {% endif %}
-            {% endfor %}
+            
+                
+                    <li class="page-item active"><span class="page-link"></span></li>
+                
+                    <li class="page-item"><a class="page-link" href="?page=&q="></a></li>
+                
+            
 
-            {% if products.has_next %}
+            
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ products.next_page_number }}{% if query %}&q={{ query }}{% endif %}">Next</a>
+                    <a class="page-link" href="?page=&q=">Next</a>
                 </li>
-            {% endif %}
+            
         </ul>
     </nav>
-    {% endif %}
-{% else %}
+    
+
     <p>No products found <h2>Health Monitoring Devices Products</h2>.</p>
-{% endif %}
+
 
     </div>
 
@@ -235,6 +235,21 @@
             emailInput.value = '';
         }
     }
+    </script>
+    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) {
+                        console.log('Service Worker registered successfully with scope: ', reg.scope);
+                    })
+                    .catch(function(err) {
+                        console.error('Service Worker registration failed: ', err);
+                    });
+            });
+        }
     </script>
     
 </body>

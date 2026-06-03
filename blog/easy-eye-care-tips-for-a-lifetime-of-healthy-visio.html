@@ -43,11 +43,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                        <a class="nav-link "
                             href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link "
                             href="../blog/index.html">Articles</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link "
                             href="../shop/index.html">Products</a>
                     </li>
 
@@ -303,6 +303,21 @@
             emailInput.value = '';
         }
     }
+    </script>
+    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) {
+                        console.log('Service Worker registered successfully with scope: ', reg.scope);
+                    })
+                    .catch(function(err) {
+                        console.error('Service Worker registration failed: ', err);
+                    });
+            });
+        }
     </script>
     
 </body>

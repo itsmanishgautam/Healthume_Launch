@@ -43,11 +43,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                        <a class="nav-link "
                             href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link active"
                             href="../blog/index.html">Articles</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link "
                             href="../shop/index.html">Products</a>
                     </li>
 
@@ -113,14 +113,14 @@
     <div class="container mt-4">
         
 <h1 class="mb-4">
-    {% if category %}
-    {{ category.name }} Articles
-    {% else %}
+    
+     Articles
+    
     All Articles
-    {% endif %}
+    
 </h1>
 
-{# Search form #}
+
 <form action="../search.html" method="GET" class="mb-4">
     <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search articles..."
@@ -363,75 +363,75 @@
 <nav aria-label="Page navigation"><ul class="pagination justify-content-center"><li class="page-item"><a class="page-link" href="index.html">Previous</a></li><li class="page-item"><a class="page-link" href="index.html">1</a></li><li class="page-item active"><span class="page-link">2</span></li><li class="page-item"><a class="page-link" href="index-page-3.html">3</a></li><li class="page-item"><a class="page-link" href="index-page-3.html">Next</a></li></ul></nav>
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">
-                    {{ post.title }}
-                    {% if post.is_featured %}
+                    
+                    
                     <span class="badge bg-warning">Featured</span>
-                    {% endif %}
+                    
                 </h5>
                 <p class="card-text">
                     <small class="text-muted">
-                        Published on {{ post.published_date|date:"F d, Y" }}
+                        Published on 
                     </small>
                 </p>
                 <p class="card-text">
-                    {# Use striptags and truncatewords to show a preview of the content #}
-                    {{ post.content|striptags|truncatewords:20 }}
+                    
+                    
                 </p>
                 <div class="mt-auto">
-                    <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm">Read More</a>
-                    {% if post.category %}
-                    <a href="{% url 'blog:post_by_category' post.category.slug %}"
+                    <a href="" class="btn btn-primary btn-sm">Read More</a>
+                    
+                    <a href=""
                         class="btn btn-secondary btn-sm ms-2">
-                        {{ post.category.name }}
+                        
                     </a>
-                    {% endif %}
+                    
                 </div>
             </div>
         </div>
     </div>
-    {% endfor %}
+    
 </div>
 
-{# Pagination controls #}
-{% if posts.has_other_pages %}
+
+
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
-        {% if posts.has_previous %}
+        
         <li class="page-item">
-            <a class="page-link" href="?page={{ posts.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            <a class="page-link" href="?page=&q=">
                 Previous
             </a>
         </li>
-        {% endif %}
-        {% for i in posts.paginator.page_range %}
-        {% if posts.number == i %}
-        <li class="page-item active"><span class="page-link">{{ i }}</span></li>
-        {% else %}
+        
+        
+        
+        <li class="page-item active"><span class="page-link"></span></li>
+        
         <li class="page-item">
-            <a class="page-link" href="?page={{ i }}{% if query %}&q={{ query }}{% endif %}">{{ i }}</a>
+            <a class="page-link" href="?page=&q="></a>
         </li>
-        {% endif %}
-        {% endfor %}
-        {% if posts.has_next %}
+        
+        
+        
         <li class="page-item">
-            <a class="page-link" href="?page={{ posts.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+            <a class="page-link" href="?page=&q=">
                 Next
             </a>
         </li>
-        {% endif %}
+        
     </ul>
 </nav>
-{% endif %}
-{% else %}
+
+
 <p>
     No articles found
-    {% if category %}
+    
     in this category
-    {% elif query %}
-    matching your search "{{ query }}"
-    {% endif %}.
+    
+    matching your search ""
+    .
 </p>
-{% endif %}
+
 
     </div>
 
@@ -486,6 +486,21 @@
             emailInput.value = '';
         }
     }
+    </script>
+    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) {
+                        console.log('Service Worker registered successfully with scope: ', reg.scope);
+                    })
+                    .catch(function(err) {
+                        console.error('Service Worker registration failed: ', err);
+                    });
+            });
+        }
     </script>
     
 </body>

@@ -43,11 +43,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                        <a class="nav-link active"
                             href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'blog' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link "
                             href="blog/index.html">Articles</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if 'shop' in request.resolver_match.app_name %}active{% endif %}"
+                        <a class="nav-link "
                             href="shop/index.html">Products</a>
                     </li>
 
@@ -117,8 +117,7 @@
 
 
 <!-- Featured Posts Carousel -->
-<div class="row mb-5">
-    
+
     <div class="col-md-8 offset-md-2">
         <div id="featuredCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
@@ -172,51 +171,7 @@
                 <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button><button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1"  aria-label="Slide 2"></button><button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2"  aria-label="Slide 3"></button>
             </div>
         </div>
-    </div>">
-                    <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none text-dark d-block">
-                        <div class="card featured-card text-center h-100">
-                            <h6 class="text-uppercase text-muted mb-2 mt-2">Featured</h6>
-                            {% if post.image %}
-                            <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width:150px; height:150px; object-fit:cover; border-radius:6px;">
-                            {% endif %}
-                            <div class="p-3">
-                                <h4 class="card-title mb-2">{{ post.title }}</h4>
-                                <p class="card-text text-muted small mb-0">{{ post.content|striptags|truncatewords:0}}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" style="filter:invert(110%);" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" style="filter:invert(110%);" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                {% for post in featured_posts %}
-                <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="{{ forloop.counter0 }}"
-                        class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
-                {% endfor %}
-            </div>
-        </div>
     </div>
-    {% else %}
-    <div class="col-12 text-center">
-        <div class="alert alert-info" role="alert">
-            No featured posts yet. Mark some as 'featured' in the admin panel under Blog → Posts!
-        </div>
-    </div>
-    {% endif %}
-</div>
-
 <!-- Trending Now Section -->
 <div class="row">
     <div class="col-md-8">
@@ -331,7 +286,7 @@
                 <p class="card-text text-center small">
                     Filter out the noise and nurture your inbox with health and wellness advice that's inclusive and rooted in medical expertise.
                 </p>
-                <form action="{% url 'blog:newsletter_signup' %}" method="POST">
+                <form action="javascript:void(0);" onsubmit="mockNewsletterSubscribe(this)">
                     
                     <div class="mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Your email address" required>
@@ -400,6 +355,21 @@
             emailInput.value = '';
         }
     }
+    </script>
+    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) {
+                        console.log('Service Worker registered successfully with scope: ', reg.scope);
+                    })
+                    .catch(function(err) {
+                        console.error('Service Worker registration failed: ', err);
+                    });
+            });
+        }
     </script>
     
 </body>
