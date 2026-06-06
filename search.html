@@ -1,228 +1,329 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-3582391366443366">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
+    <title>Search Results | healthume</title>
+    <meta name="description" content="Search healthume articles, products, and wellness tools.">
+    <meta name="robots" content="noindex,follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Search Results | healthume">
+    <meta property="og:description" content="Search healthume articles, products, and wellness tools.">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3582391366443366" crossorigin="anonymous"></script>
 </head>
+<body>
 
-<body><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3582391366443366"
-     crossorigin="anonymous"></script>
-
-    <header class="bg-light py-2 border-bottom">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-none d-md-block small">
-                <span class="me-3">
-                    <i class="fas fa-check-circle text-success"></i> Medically Reviewed
-                </span>
-                <span class="me-3">
-                    <i class="fas fa-user-md text-primary"></i> Expert Verified
-                </span>
-                <span>
-                    <i class="fas fa-calendar-check text-info"></i> Last Updated: June 03, 2026
-                </span>
+    <header class="topbar py-2 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div class="d-none d-md-flex align-items-center gap-4 small text-muted">
+                <span><i class="fas fa-check-circle text-success me-1"></i> Medically Reviewed</span>
+                <span><i class="fas fa-user-md text-primary me-1"></i> Expert Verified</span>
+                <span><i class="fas fa-calendar-check text-info me-1"></i> Last Updated: June 03, 2026</span>
             </div>
-            <div class="text-end small">
+            <div class="ms-auto small">
                 <a href="privacy-policy.html" class="text-decoration-none text-muted">Privacy Policy</a>
             </div>
         </div>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="index.html">healthume</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link "
-                            href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link "
-                            href="blog/index.html">Articles</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog/index.html">Articles</a></li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="blogCategoryDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogCategoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="blogCategoryDropdown">
                             <li><a class="dropdown-item" href="blog/category-mental-health.html">Mental Health</a></li>
-<li><a class="dropdown-item" href="blog/category-nutrition-diet.html">Nutrition & Diet</a></li>
-<li><a class="dropdown-item" href="blog/category-physical-health.html">Physical Health</a></li>
-<li><a class="dropdown-item" href="blog/category-skin-beauty.html">Skin & Beauty</a></li>
+                            <li><a class="dropdown-item" href="blog/category-nutrition-diet.html">Nutrition &amp; Diet</a></li>
+                            <li><a class="dropdown-item" href="blog/category-physical-health.html">Physical Health</a></li>
+                            <li><a class="dropdown-item" href="blog/category-skin-beauty.html">Skin &amp; Beauty</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link "
-                            href="shop/index.html">Products</a>
-                    </li>
 
-
-
-
-
+                    <li class="nav-item"><a class="nav-link" href="shop/index.html">Products</a></li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tools
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
                             <li><a class="dropdown-item" href="tools/bmi_calculator.html">BMI Calculator</a></li>
-                            <li><a class="dropdown-item" href="tools/calorie_calculator.html">Daily Calorie
-                                    Calculator</a></li>
+                            <li><a class="dropdown-item" href="tools/calorie_calculator.html">Daily Calorie Calculator</a></li>
                         </ul>
-
                     </li>
-
-
-
-
-
-
                 </ul>
-                <form class="d-flex" action="search.html" method="GET">
-                    <input class="form-control me-2" type="search" name="q"
-                        placeholder="Search articles and products..." aria-label="Search">
+
+                <form class="d-flex search-form" action="search.html" method="GET" role="search">
+                    <label class="visually-hidden" for="site-search">Search</label>
+                    <input id="site-search" class="form-control me-2" type="search" name="q" placeholder="Search articles and products..." aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
-
             </div>
         </div>
     </nav>
 
-    <!-- ✅ COVID-19 Update Banner -->
-    <div id="health-alert" class="alert alert-warning alert-dismissible fade show rounded-0 mb-0 text-center"
-        role="alert">
+    <div id="health-alert" class="alert alert-warning alert-dismissible fade show rounded-0 mb-0 text-center health-alert" role="alert">
         <strong>Health Products:</strong> Find the latest information and updates on our health products.
         <a href="shop/index.html" class="alert-link">Browse now</a>.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <!-- ✅ Main Content -->
-    <div class="container mt-4">
-        
-<h2>Search Results for "<span id="search-query-text"></span>"</h2>
-<div class="row" id="search-results-container">
-    <!-- Results loaded via JavaScript -->
-</div>
-<p id="no-results-msg" style="display: none;">No results found for "<span id="no-results-query"></span>".</p>
-
-    </div>
-
-    <!-- ✅ Footer -->
-    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+    <main class="py-5">
         <div class="container">
-            <hr class="text-white-50">
+            <div class="hero-panel mb-4">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="hero-kicker"><i class="fas fa-magnifying-glass"></i> Search results</span>
+                        <h1 class="hero-title mb-3">Search results for "<span id="search-query-text"></span>"</h1>
+                        <p class="hero-text mb-0">
+                            Explore articles, products, and tools related to your search.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <form class="search-form" action="search.html" method="GET" role="search">
+                            <label class="visually-hidden" for="search-page-input">Search again</label>
+                            <div class="input-group">
+                                <input id="search-page-input" class="form-control" type="search" name="q" placeholder="Search again..." aria-label="Search again">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div id="results-meta" class="mb-3 text-muted small"></div>
+
+                    <div class="row" id="search-results-container">
+                        <!-- Results loaded via JavaScript -->
+                    </div>
+
+                    <div id="no-results-msg" class="d-none">
+                        <div class="card sidebar-card text-center p-4">
+                            <div class="card-body">
+                                <div class="mb-3" style="font-size: 3rem;">
+                                    <i class="fas fa-face-frown text-primary"></i>
+                                </div>
+                                <h2 class="h4 mb-3">No results found for "<span id="no-results-query"></span>"</h2>
+                                <p class="text-muted mb-4">
+                                    Try a different keyword, browse a category, or check out some popular pages below.
+                                </p>
+
+                                <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                                    <a href="blog/index.html" class="btn btn-primary">Browse Articles</a>
+                                    <a href="shop/index.html" class="btn btn-outline-primary">Browse Products</a>
+                                    <a href="index.html" class="btn btn-outline-primary">Go Home</a>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <a href="blog/category-nutrition-diet.html" class="quick-link">
+                                        <i class="fas fa-apple-whole"></i>
+                                        <div>
+                                            <strong>Nutrition &amp; Diet</strong>
+                                            <span>Food and wellness guidance</span>
+                                        </div>
+                                    </a>
+
+                                    <a href="blog/category-mental-health.html" class="quick-link">
+                                        <i class="fas fa-brain"></i>
+                                        <div>
+                                            <strong>Mental Health</strong>
+                                            <span>Stress, sleep, and mindset</span>
+                                        </div>
+                                    </a>
+
+                                    <a href="tools/bmi_calculator.html" class="quick-link">
+                                        <i class="fas fa-calculator"></i>
+                                        <div>
+                                            <strong>BMI Calculator</strong>
+                                            <span>Quick health check tool</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="col-lg-4">
+                    <div class="card sidebar-card mb-4">
+                        <div class="card-body">
+                            <h2 class="h5 mb-3">Popular Categories</h2>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a href="blog/category-mental-health.html" class="text-decoration-none">Mental Health</a>
+                                    <span class="badge rounded-pill">3</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a href="blog/category-nutrition-diet.html" class="text-decoration-none">Nutrition &amp; Diet</a>
+                                    <span class="badge rounded-pill">9</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a href="blog/category-physical-health.html" class="text-decoration-none">Physical Health</a>
+                                    <span class="badge rounded-pill">16</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <a href="blog/category-skin-beauty.html" class="text-decoration-none">Skin &amp; Beauty</a>
+                                    <span class="badge rounded-pill">1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card sidebar-card newsletter-card text-white">
+                        <div class="card-body">
+                            <div class="newsletter-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h2 class="h5 text-center mb-3">Get wellness updates</h2>
+                            <p class="text-center small">
+                                Subscribe for helpful health tips and new article alerts.
+                            </p>
+                            <form action="javascript:void(0);" onsubmit="mockNewsletterSubscribe(this)">
+                                <div class="mb-3">
+                                    <label for="newsletter-email" class="visually-hidden">Email address</label>
+                                    <input id="newsletter-email" type="email" name="email" class="form-control" placeholder="Your email address" required>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-warning">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <hr class="footer-sep">
             <div class="text-center small">
                 <p>&copy; 2026 healthume. All rights reserved.</p>
-
                 <p>
                     <a href="privacy-policy.html" class="text-white text-decoration-none mx-2">Privacy Policy</a>
                     <span class="text-white-50">|</span>
-                    <a href="terms-of-service.html" class="text-white text-decoration-none mx-2">Terms of
-                        Service</a>
+                    <a href="terms-of-service.html" class="text-white text-decoration-none mx-2">Terms of Service</a>
                 </p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-<script src="js/search-db.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get('q') || '';
-    
-    // Pre-fill search inputs
-    document.getElementById('search-query-text').innerText = query;
-    document.getElementById('no-results-query').innerText = query;
-    
-    const searchInputs = document.querySelectorAll('input[name="q"]');
-    searchInputs.forEach(input => {
-        input.value = query;
-    });
-
-    const resultsContainer = document.getElementById('search-results-container');
-    const noResultsMsg = document.getElementById('no-results-msg');
-    
-    if (!query.trim()) {
-        noResultsMsg.style.display = 'block';
-        return;
-    }
-
-    const lowerQuery = query.toLowerCase();
-    
-    // Filter posts and products
-    const matchedPosts = searchDatabase.posts.filter(p => 
-        p.title.toLowerCase().includes(lowerQuery) || 
-        p.content.toLowerCase().includes(lowerQuery)
-    );
-    
-    const matchedProducts = searchDatabase.products.filter(pr => 
-        pr.name.toLowerCase().includes(lowerQuery) || 
-        pr.description.toLowerCase().includes(lowerQuery)
-    );
-
-    // Combine and sort alphabetically
-    const results = [];
-    matchedPosts.forEach(p => results.push({ type: 'post', obj: p, name: p.title }));
-    matchedProducts.forEach(pr => results.push({ type: 'product', obj: pr, name: pr.name }));
-    
-    results.sort((a, b) => a.name.localeCompare(b.name));
-
-    if (results.length === 0) {
-        noResultsMsg.style.display = 'block';
-        return;
-    }
-
-    results.forEach(item => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 mb-4';
-        
-        if (item.type === 'post') {
-            const imgHtml = item.obj.image ? `<img src="media/${item.obj.image}" class="card-img-top" style="height: 180px; width: auto; max-width: 100%; display: block; margin: 0 auto; object-fit: contain;">` : '';
-            col.innerHTML = `
-                <div class="card h-100 shadow-sm">
-                    ${imgHtml}
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${item.obj.title}</h5>
-                        <p class="card-text text-muted small">${item.obj.content_preview}</p>
-                        <a href="blog/${item.obj.slug}.html" class="btn btn-outline-primary mt-auto btn-sm">Read Article</a>
-                    </div>
-                </div>`;
-        } else {
-            const imgHtml = item.obj.image ? `<img src="media/${item.obj.image}" class="card-img-top" alt="${item.obj.name}" style="object-fit: cover; height: 180px;">` : '';
-            col.innerHTML = `
-                <div class="card h-100 shadow-sm">
-                    ${imgHtml}
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${item.obj.name}</h5>
-                        <p class="card-text text-muted small">${item.obj.description_preview}</p>
-                        <a href="shop/${item.obj.slug}.html" class="btn btn-outline-success mt-auto btn-sm">View Product</a>
-                    </div>
-                </div>`;
-        }
-        resultsContainer.appendChild(col);
-    });
-});
-</script>
-
+    <script src="js/search-db.js"></script>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const query = (params.get('q') || '').trim();
+
+            document.getElementById('search-query-text').innerText = query || 'all content';
+            document.getElementById('no-results-query').innerText = query || 'your search';
+            document.getElementById('search-page-input').value = query;
+
+            const resultsContainer = document.getElementById('search-results-container');
+            const noResultsMsg = document.getElementById('no-results-msg');
+            const resultsMeta = document.getElementById('results-meta');
+
+            if (!query) {
+                resultsMeta.innerText = 'Enter a keyword above to search articles and products.';
+                noResultsMsg.classList.remove('d-none');
+                return;
+            }
+
+            const lowerQuery = query.toLowerCase();
+
+            const matchedPosts = searchDatabase.posts.filter(p =>
+                p.title.toLowerCase().includes(lowerQuery) ||
+                p.content.toLowerCase().includes(lowerQuery)
+            );
+
+            const matchedProducts = searchDatabase.products.filter(pr =>
+                pr.name.toLowerCase().includes(lowerQuery) ||
+                pr.description.toLowerCase().includes(lowerQuery)
+            );
+
+            const results = [];
+            matchedPosts.forEach(p => results.push({ type: 'post', obj: p, name: p.title }));
+            matchedProducts.forEach(pr => results.push({ type: 'product', obj: pr, name: pr.name }));
+
+            results.sort((a, b) => a.name.localeCompare(b.name));
+
+            resultsMeta.innerText = `${results.length} result${results.length === 1 ? '' : 's'} found`;
+
+            if (results.length === 0) {
+                noResultsMsg.classList.remove('d-none');
+                return;
+            }
+
+            results.forEach(item => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6 mb-4';
+
+                if (item.type === 'post') {
+                    const imgHtml = item.obj.image
+                        ? `<img src="media/${item.obj.image}" class="card-img-top" alt="${item.obj.title}" loading="lazy" style="height: 200px; object-fit: cover;">`
+                        : '';
+
+                    col.innerHTML = `
+                        <div class="card h-100 top-read-card">
+                            ${imgHtml}
+                            <div class="card-body d-flex flex-column">
+                                <span class="featured-badge mb-2">Article</span>
+                                <h2 class="h5 card-title">${item.obj.title}</h2>
+                                <p class="card-text text-muted small">${item.obj.content_preview}</p>
+                                <div class="mt-auto">
+                                    <a href="blog/${item.obj.slug}.html" class="btn btn-outline-primary btn-sm">Read Article</a>
+                                </div>
+                            </div>
+                        </div>`;
+                } else {
+                    const imgHtml = item.obj.image
+                        ? `<img src="media/${item.obj.image}" class="card-img-top" alt="${item.obj.name}" loading="lazy" style="height: 200px; object-fit: cover;">`
+                        : '';
+
+                    col.innerHTML = `
+                        <div class="card h-100 top-read-card">
+                            ${imgHtml}
+                            <div class="card-body d-flex flex-column">
+                                <span class="featured-badge mb-2">Product</span>
+                                <h2 class="h5 card-title">${item.obj.name}</h2>
+                                <p class="card-text text-muted small">${item.obj.description_preview}</p>
+                                <div class="mt-auto">
+                                    <a href="shop/${item.obj.slug}.html" class="btn btn-outline-primary btn-sm">View Product</a>
+                                </div>
+                            </div>
+                        </div>`;
+                }
+
+                resultsContainer.appendChild(col);
+            });
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
             const alertBar = document.getElementById("health-alert");
             if (!alertBar) return;
@@ -235,41 +336,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 sessionStorage.setItem("healthAlertDismissed", "true");
             });
         });
-    </script>
 
-
-
-    <!-- TinyMCE JavaScript -->
-    <script type="text/javascript" src=""></script>
-
-
-
-
-    <script>
-    function mockNewsletterSubscribe(form) {
-        const emailInput = form.querySelector('input[type="email"]');
-        if (emailInput && emailInput.value) {
-            alert('Subscription activated! You will start receiving health tips soon.');
-            emailInput.value = '';
-        }
-    }
-    </script>
-    
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(reg) {
-                        console.log('Service Worker registered successfully with scope: ', reg.scope);
-                    })
-                    .catch(function(err) {
-                        console.error('Service Worker registration failed: ', err);
-                    });
-            });
+        function mockNewsletterSubscribe(form) {
+            const emailInput = form.querySelector('input[type="email"]');
+            if (emailInput && emailInput.value) {
+                alert('Subscription activated! You will start receiving health tips soon.');
+                emailInput.value = '';
+            }
         }
     </script>
-    
 </body>
-
 </html>
