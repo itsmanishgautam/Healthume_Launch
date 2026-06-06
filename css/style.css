@@ -11,9 +11,11 @@
   --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.10);
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   margin: 0;
@@ -27,9 +29,11 @@ body {
   line-height: 1.65;
 }
 
+
 a {
   text-decoration: none;
 }
+
 
 .topbar {
   background: rgba(255, 255, 255, 0.72);
@@ -37,10 +41,12 @@ a {
   -webkit-backdrop-filter: blur(16px);
 }
 
+
 .navbar {
   background: linear-gradient(135deg, #0f172a 0%, #111827 55%, #1e293b 100%) !important;
   box-shadow: 0 8px 30px rgba(15, 23, 42, 0.18);
 }
+
 
 .navbar-brand {
   font-weight: 800;
@@ -48,15 +54,18 @@ a {
   letter-spacing: -0.03em;
 }
 
+
 .nav-link {
   font-weight: 500;
   opacity: 0.9;
 }
 
+
 .nav-link:hover,
 .nav-link.active {
   opacity: 1;
 }
+
 
 .search-form .form-control {
   border-radius: 999px;
@@ -64,10 +73,12 @@ a {
   box-shadow: none !important;
 }
 
+
 .btn {
   border-radius: 999px;
   font-weight: 600;
 }
+
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -75,20 +86,24 @@ a {
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
 }
 
+
 .btn-primary:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 30px rgba(37, 99, 235, 0.30);
 }
+
 
 .btn-outline-primary {
   border-color: rgba(37, 99, 235, 0.25);
   color: var(--primary-dark);
 }
 
+
 .btn-outline-primary:hover {
   background: var(--primary);
   border-color: var(--primary);
 }
+
 
 .health-alert {
   border: none;
@@ -96,14 +111,17 @@ a {
   color: #7c5c00;
 }
 
+
 .health-alert .alert-link {
   color: #5f4300;
   font-weight: 700;
 }
 
+
 .hero-wrap {
   padding: 2rem 0 1rem;
 }
+
 
 .hero-panel {
   position: relative;
@@ -118,6 +136,7 @@ a {
   padding: 2.5rem;
 }
 
+
 .hero-kicker {
   display: inline-flex;
   align-items: center;
@@ -130,6 +149,7 @@ a {
   font-weight: 700;
 }
 
+
 .hero-title {
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.05;
@@ -138,11 +158,13 @@ a {
   margin: 1rem 0;
 }
 
+
 .hero-text {
   max-width: 60ch;
   color: var(--muted);
   font-size: 1.05rem;
 }
+
 
 .hero-actions {
   display: flex;
@@ -151,16 +173,19 @@ a {
   margin-top: 1.5rem;
 }
 
+
 .section-heading h2 {
   font-weight: 800;
   letter-spacing: -0.04em;
   margin-bottom: .25rem;
 }
 
+
 .section-heading p {
   color: var(--muted);
   margin-bottom: 1.25rem;
 }
+
 
 .featured-card,
 .top-read-card,
@@ -171,6 +196,7 @@ a {
   background: var(--surface-solid);
 }
 
+
 .featured-card {
   border-radius: 28px;
   overflow: hidden;
@@ -178,21 +204,27 @@ a {
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
+
 .featured-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
   border-color: rgba(37, 99, 235, 0.22) !important;
 }
 
+
+/* ✅ FIXED: featured-card images now constrained properly */
 .featured-card img {
   width: 100%;
   max-width: 420px;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
   margin: 0 auto;
+  display: block;
 }
+
 
 .featured-badge {
   display: inline-block;
@@ -207,6 +239,7 @@ a {
   border-radius: 999px;
 }
 
+
 .carousel-indicators [data-bs-target] {
   width: 10px;
   height: 10px;
@@ -214,9 +247,11 @@ a {
   background-color: rgba(37, 99, 235, 0.35);
 }
 
+
 .carousel-indicators .active {
   background-color: var(--primary);
 }
+
 
 .trending-item {
   border-radius: 22px;
@@ -224,18 +259,23 @@ a {
   transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
 }
 
+
 .trending-item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   background: #ffffff;
 }
 
+
+/* ✅ FIXED: trending-item images now exactly 110px */
 .trending-item img {
   width: 110px !important;
   height: 110px !important;
   border-radius: 18px;
   object-fit: cover;
+  display: block;
 }
+
 
 .top-read-card {
   border-radius: 24px;
@@ -243,28 +283,38 @@ a {
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
+
 .top-read-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
 }
 
+
+/* ✅ FIXED: top-read-card images now constrained to 210px max height */
 .top-read-card img {
+  width: 100%;
   height: 210px !important;
+  max-height: 210px;
   object-fit: cover;
+  display: block;
 }
+
 
 .top-read-card .card-body {
   padding: 1.25rem;
 }
+
 
 .sidebar-card {
   border-radius: 24px;
   overflow: hidden;
 }
 
+
 .sidebar-card .card-body {
   padding: 1.25rem;
 }
+
 
 .sidebar-card .list-group-item {
   background: transparent;
@@ -273,9 +323,11 @@ a {
   border-right: 0;
 }
 
+
 .sidebar-card .badge {
   background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
 }
+
 
 .newsletter-card {
   background: linear-gradient(135deg, #2563eb 0%, #0f766e 100%) !important;
@@ -283,11 +335,13 @@ a {
   border: none !important;
 }
 
+
 .newsletter-card .form-control {
   border: none;
   padding: .9rem 1.1rem;
   border-radius: 999px;
 }
+
 
 .newsletter-card .btn-warning {
   background: #fbbf24;
@@ -297,9 +351,11 @@ a {
   font-weight: 700;
 }
 
+
 .newsletter-card .btn-warning:hover {
   background: #f59e0b;
 }
+
 
 .newsletter-icon {
   width: 56px;
@@ -313,31 +369,51 @@ a {
   font-size: 1.2rem;
 }
 
+
 footer {
   background: linear-gradient(180deg, #0f172a 0%, #020617 100%) !important;
   color: #e5e7eb;
   margin-top: 4rem;
 }
 
+
 .footer-sep {
   border-color: rgba(255,255,255,0.15);
 }
+
 
 footer a {
   color: #fff;
   opacity: 0.85;
 }
 
+
 footer a:hover {
   opacity: 1;
 }
 
+
+/* ✅ FIXED: ALL content-body images now properly constrained */
 .content-body img {
   max-width: 100%;
+  width: auto;
   height: auto;
+  max-height: 600px;
   display: block;
   border-radius: 16px;
+  margin: 1rem auto;
 }
+
+
+/* ✅ NEW: Global image constraint for card-img-top */
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
 
 @media (max-width: 991px) {
   .hero-panel {
@@ -345,16 +421,34 @@ footer a:hover {
     border-radius: 24px;
   }
 
+
   .hero-title {
     font-size: 2.2rem;
   }
+
 
   .search-form {
     margin-top: 1rem;
     width: 100%;
   }
 
+
   .search-form .form-control {
     width: 100%;
+  }
+  
+  /* ✅ Mobile: images smaller on mobile */
+  .content-body img {
+    max-height: 400px;
+  }
+  
+  .top-read-card img {
+    height: 180px !important;
+    max-height: 180px;
+  }
+  
+  .trending-item img {
+    width: 80px !important;
+    height: 80px !important;
   }
 }
